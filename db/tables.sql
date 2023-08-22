@@ -14,13 +14,8 @@ CREATE TABLE books (
     author_id INT,
     genre_id INT,
     publication_year INT,
-    checkout_count INT DEFAULT 0;
-    /* UPDATE books
-    SET checkout_count = checkout_count + 1
-    WHERE id = <book_id>;
-    SELECT checkout_count    updates book counter
-    FROM books
-    WHERE id = <book_id>; */
+    view_count INT DEFAULT 0, -- Add this column
+    checkout_count INT DEFAULT 0,
     FOREIGN KEY (author_id) REFERENCES authors(id),
     FOREIGN KEY (genre_id) REFERENCES genres(id)
 );
