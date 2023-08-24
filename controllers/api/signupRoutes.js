@@ -10,16 +10,20 @@ router.get('/', (req, res) => {
 
 
 router.post('/', async (req, res) => {
+    console.log("data recieved: ", req.body)
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10)
-        Users.push({
-            id: Date.now().toString(),
-            name: req.body.name,
-            password: hashedPassword
-        })
-        res.redirect('/login')
+        console.log(hashedPassword)
+                // Users.push({
+        //     id: Date.now().toString(),
+        //     name: req.body.name,
+        //     password: 
+        // })
+
+        
+        res.redirect('/api/login')
     } catch {
-        res.redirect('/signup')
+        res.redirect('/api/signup')
     }
     console.log(Users)
 }
