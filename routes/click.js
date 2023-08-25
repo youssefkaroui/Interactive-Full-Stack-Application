@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const LinkClick = require('../models/linkclick');
+const LinkClick = require('../models/Book');
 
 router.get('/:linkName', async (req, res) => {
   const linkName = req.params.linkName;
