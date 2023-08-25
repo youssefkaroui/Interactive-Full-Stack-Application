@@ -1,3 +1,3 @@
 const User = require("./User")
-const Book = require("./Book")
+const Book = require("./book")
 module.exports = {User,Book}
