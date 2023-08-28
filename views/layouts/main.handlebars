@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>The best Library known to earth</title>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <title>DevLibrary</title>
+    <!-- <link rel="stylesheet" href="./css/jass.css"> -->
 </head>
-{{{body}}}
+<link rel="stylesheet" href="/public/css/style.css">
+
+<body>
+    <main class="item">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <img src="/images/digitalLib.png" alt="A Digital Library">
+                </div>
+                <div class="column is-half">
+                    <h1 class="title is-1">Welcome to the Programming resources Library!</h1>
+                    <p>This is a place where you can find all the resources you need to learn to code.</p>
+                    <p>We have tutorials, articles, videos, and more.</p>
+                    <p>So whether you're a beginner or a seasoned pro, we have something for you.</p>
+                    <p>Sign up to get started!</p>
+                    <form action="/signup" method="post">
+                    <div class="field has-addons">
+                                <p class="control">
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <input class="input is-rounded" type="text" name="name" placeholder="Your name" id="name-signup">
+                                </p>
+                            </div>
+                            <div class="field has-addons">
+                                <p class="control">
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                    <input class="input is-rounded" type="email" name="email" placeholder="Your email" id="email-signup">
+                                </p>
+                            </div>
+                            <div class="field has-addons">
+                                <p class="control">
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                    <input class="input is-rounded" type="password" name="password" placeholder="Your password" id="password-signup">
+                                </p>
+                            </div>
+                            <button class="button is-primary is-rounded" type="submit">Sign up</button>
+                            <p><br>Already have an account? <a href="/login">Please Log In.</a></p>
+
+                        </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
 </html>
