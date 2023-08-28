@@ -21,6 +21,7 @@
     "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.1",
     "bulma": "^0.9.4",
+    "clipboard": "^2.0.11",
     "compression": "^1.7.4",
     "connect-session-sequelize": "^7.1.7",
     "dotenv": "^16.3.1",
