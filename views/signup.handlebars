@@ -26,7 +26,9 @@
       <div class="column is-half">
         <div>
           <div><h2 class="has-text-link title is-2 has-text-centered">Sign Up to get started!</h2></div>
-
+               {{#if message}}
+                <h1>{{message}} </h1>
+                {{/if}}
           <!-- <p>Please enter your information to get started.</p><br> -->
           <br><form action="/signup" method="post">
             <!-- Full Name Input -->
