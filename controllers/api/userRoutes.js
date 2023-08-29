@@ -2,17 +2,24 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
+  console.log("Incoming Data: ", req.body)
   try {
     const userData = await User.create(req.body);
-
+    console.log("New User:", userData);
+    // here we are trying to ADD OUR USER_ID to the REQ.SESSION OBJECT
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      //res.status(200).json(userData);
+      res.redirect('/login') // OR MAYBE --> Redirect to an AUtorized endpoint(?)
     });
   } catch (err) {
-    res.status(400).json(err);
+    console.log("Signup Error: ", err);
+    res.status(400); 
+    res.render("signup", {
+      message:"Signup failed, please try again."
+    })
   }
 });
 
