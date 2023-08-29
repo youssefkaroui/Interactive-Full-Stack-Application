@@ -16,12 +16,12 @@ document.addEventListener('Load Content', () => {
   
       // Continue browsing button clicked
       if (event.target.id === 'continueBrowsing') {
-        window.location.href = "/browse";
+        window.location.href = "/book";
       }
     
       // Confirm purchase button clicked
       if (event.target.id === 'placeOrder') {
-        fetch("/api/userinfo")
+        fetch("/api/user")
           .then(response => response.json())
           .then(data => {
             console.log('user.email: ', data.email);

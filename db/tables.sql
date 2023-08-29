@@ -34,13 +34,15 @@ CREATE TABLE documentation(
 );
 
 CREATE TABLE users (
-    id INT PRIMARY KEY,
-    username VARCHAR(255),
+    id INT PRIMARY KEY ,
+    firstname VARCHAR(255),
+    lastname VARCHAR(255),
     password VARCHAR(255),
     email VARCHAR(255)
+
 );
 
-CREATE TABLE CheckoutCart(
+CREATE TABLE checkoutCart(
     cartID INT PRIMARY KEY,
     userID INT,
     BookID INT,
