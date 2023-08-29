@@ -1,14 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <title>Programming Resources Library</title>
+</head>
 <body>
-   <div class="navbar">
-  <a href="/api/books">View books</a>
-  <a href="/api/Login">Login</a>
-  <Br></Br>
-  <span class="title">Library Homepage</span>
- <div class="View-Dashboard">
-            <h1>Welcome to the best library known to earth!!</h1>
-
-        </div>
-  </body>
-
   
- 
+  <header class="card-header">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="/images/header-1.jpg" alt="Header Image"/>
+      </figure>
+    </div>
+  </header>
+  
+  <section class="section">
+    <div class="container has-text-centered">
+      <h1 class="title is-1">This is your Resources Dashboard</h1>
+      <p class="title is-2">Discover different resources and create your own collection!</p>
+    </div>
+  </section>
+  
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/views/homepage.handlebars">
+        <!-- Insert your logo image here -->
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/api/homepage">Home</a>
+        <a class="navbar-item" href="/api/browse">Search</a>
+        <a class="navbar-item" href="/api/resources">Your Resources</a>
+        <a class="navbar-item" href="#" id="openAboutModal">About</a>
+        <a class="navbar-item" href="#" id="openContactmodal">Contact</a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item is-link is-rounded" href="/api/logout">Log out</a>
+      </div>
+    </div>
+  </nav>
+  <!-- about modal -->
+  <div class="modal" id="aboutModal">
+    <div class="modal-background "></div>
+    <div class="modal-content">
+      <div class="box">
+
+        Welcome to the Programming Resources Library, your hub for all things coding and development! 
+        We are passionate about empowering individuals on their journey to becoming proficient developers. 
+        Whether you're a beginner looking to learn the fundamentals or an experienced developer seeking to enhance your skills, 
+        our comprehensive collection of coding resources has you covered. From tutorials and guides to reference materials and coding challenges, 
+        we offer a diverse range of resources to cater to different learning styles. 
+        Our mission is to provide you with the tools and knowledge you need to succeed in the ever-evolving world of programming. 
+        Join our community and unlock a world of coding possibilities!
+      <!-- Any other Bulma elements you want -->
+    </div>
+    <button class="modal-close is-large" aria-label="close" id="closeAboutModal">Close</button>
+  </div>
+  </div>
+  <!-- Contact Form Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <button class="delete" aria-label="close" id="closeModal"></button>       
+        <h2 class="title is-4">Contact Us</h2>
+        <form>
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Your Name">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="email" placeholder="Your Email">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Your Message"></textarea>
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-link is-light" id="closeModal">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" id="closeModal" data-close-modal>Close</button>
+  </div>
+  
+  <script src="/public/js/modals.js"></script>
+
+</body>
+</html>

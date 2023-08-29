@@ -1,0 +1,73 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vh;
+  margin: 0;
+  background-color: aliceblue;
+
+}
+
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  flex: 1;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+
+.input {
+
+  margin-bottom: 1rem;
+}
+
+.input::-webkit-input-placeholder {
+  font-size: 0.8rem;
+}
+
+.input::-moz-placeholder {
+  font-size: 0.8rem;
+}
+
+.input:-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+
+.input::-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+
+.input::placeholder {
+  font-size: 0.8rem;
+}
