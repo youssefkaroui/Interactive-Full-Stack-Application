@@ -1,17 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <title>DevLibrary</title>
+  <!-- <link rel="stylesheet" href="./css/jass.css"> -->
+</head>
+<link rel="stylesheet" href="/public/css/style.css">
+
 <body>
-     <div class="forms-container">
-        <div class="login-form">
-            <h2>Login</h2>
-                
-            <form action="/login" method="post"></form>
-            <form>
-                <label for="login-name">Username:   </label>
-                <input type="username" id="login-name" name="login-name" required><br>
-                <label for="login-password">Password:</label>
-                <input type="password" id="login-password" name="login-password" required><br>
-                <button type="submit">Login</button>
-                <br><h2>Not registered?</h2>
-                <a href="/signup"> Register Now</a>
-            </form>
+  <header class="hero is-primary is-flex is-align-items-center">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 is-black">Welcome to the Programming resources Library!</h1>
+      </div>
+    </div>
+  </header><br>
+<!-- <div><h2 class="has-text-link title is-2 has-text-centered">Log in to get started!</h2></div> -->
+  <main class="section">
+    <img src="images/loginBG.png" alt="WELCOME BACK">
+
+    <div class="container">
+      <div class="columns is-vcentered is-justify-content-center">
+        <!-- Add a column with a blue background -->
+        <div class="column is-half ">
+          <div class="columns is-centered">
+            <div class="column">
+            </div>
+          </div>
         </div>
-    
+        <div class="column is-half">
+          <div class="columns is-centered">
+            <div class="column">
+              <p>
+              <!-- <h2>Log in to get started!</h2></p> -->
+              <form action="/login" method="post">
+                <div class="field ">
+                <input type="email" class="input is-rounded" id="email-login" placeholder="Your Email Address"/>
+                  <!-- <a href="/login">Log In</a> -->
+                </div>
+                <input type="password" class="input is-rounded" id="password-login" placeholder="Password"/>
+                <br><br><button type="submit" class="button is-link is-rounded">Log In</button>
+              </form>
+              <!-- <button class="button is-primary is-rounded" type="submit">Sign up</button> -->
+              <p><br>Don't have an account?<a href="/">Please Sign Up!</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Render script for logged in users only -->
+   {{#if logged_in}}
+   <script src="/js/logout.js"></script> 
+  {{/if}} 
+</body>
+
+</html>
