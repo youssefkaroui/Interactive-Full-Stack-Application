@@ -1,6 +1,6 @@
 const express = require('express');
 const bookRouter = express.Router();
-const db = require('../models');
+const db = require('../../models/book');
 
 // Route to get all books
 bookRouter.get('/api/book', async (req, res) => {
@@ -52,7 +52,7 @@ bookRouter.post('/api/book', async (req, res) => {
 });
 
 // Route to delete a book by ID
-router.delete('/api/book/:isbn', async (req, res) => {
+bookRouter.delete('/api/book/:isbn', async (req, res) => {
   try {
     const book = await book.destroy({
       where: {
@@ -89,4 +89,6 @@ bookRouter.put('/api/book', async (req, res) => {
     res.status(500).json({ err: 'Error occured while updating a book'}
   )};
   });
+
+
 module.exports = bookRouter;

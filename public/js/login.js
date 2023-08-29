@@ -23,6 +23,7 @@ const loginHandler = async (event) => {
   };
   
   const signupHandler = async (event) => {
+    console.log("Sending to SERVER...");
     event.preventDefault();
   
     const userName = document.querySelector('#name-signup').value.trim();

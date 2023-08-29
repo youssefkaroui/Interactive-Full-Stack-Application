@@ -2,8 +2,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
   <title>Sign Up</title>
-  <link rel="stylesheet" href="/public/css/style.css">
 <body>
+ <!-- <link rel="stylesheet" href="/css/style.css">  -->
   <header class="hero is-primary is-flex is-align-items-center">
     <div class="hero-body">
       <div class="container has-text-centered">
@@ -30,9 +30,11 @@
                 <h1>{{message}} </h1>
                 {{/if}}
           <!-- <p>Please enter your information to get started.</p><br> -->
-          <br><form action="/signup" method="post">
+          <br>
+      <!--    <form action="/api/user/" method="post">  -->
+          <form id="signup-form">
             <!-- Full Name Input -->
- <div>
+            <div>
               <input class="input is-rounded" type="text" id="name-signup" name="name" id="name-signup" placeholder="Your Full Name"> <br> <br>
             </div> 
             <!-- Email Input -->
@@ -63,7 +65,7 @@
         <p>Already have an account? <a href="/login">Log in here</a></p>
       </div>
     </div>
-    <script src="/public/js/login.js"></script>
+    <script src="/js/signup.js"></script>
 
 </body>
 
