@@ -1,11 +1,11 @@
 const express = require('express');
 const bookRouter = express.Router();
-const db = require('../../models/book');
+const {Book} = require('../../models');
 
 // Route to get all books
 bookRouter.get('/api/book', async (req, res) => {
   try {
-    const book = await db.Book.findAll();
+    const book = await Book.findAll();
     console.log('In GET /api/book - findAll()');
     console.log('Books: ', book);
     res.json(book);
@@ -23,7 +23,7 @@ bookRouter.get('/', (req, res) => {
 // Route to get a single book by ISBN
 bookRouter.get('/api/book/:isbn', async (req, res) => {
   try {
-    const book = await book.findOne({
+    const book = await Book.findOne({
       where: {
         isbn: req.params.isbn
       }
@@ -54,13 +54,13 @@ bookRouter.post('/api/book', async (req, res) => {
 // Route to delete a book by ID
 bookRouter.delete('/api/book/:isbn', async (req, res) => {
   try {
-    const book = await book.destroy({
+    const book = await Book.destroy({
       where: {
         isbn: req.params.isbn
       }
     });
-    console.log('In DELETE /api/books/:id - destroy()');
-    console.log('req.params.id: ', req.params.id);
+    console.log('In DELETE /api/book/:id - destroy()');
+    console.log('req.params.isbn: ', req.params.id);
     console.log('Book: ', book);
     res.json(book);
   } catch (err) {
@@ -72,7 +72,7 @@ bookRouter.delete('/api/book/:isbn', async (req, res) => {
 // Route to update a book by ID
 bookRouter.put('/api/book', async (req, res) => {
   try {
-    const book = await book.update(
+    const book = await Book.update(
       req.body,
       {
         where: {
@@ -80,8 +80,8 @@ bookRouter.put('/api/book', async (req, res) => {
         }
       }
     );
-    console.log('In PUT /api/books - update()');
-    console.log('req.body.id: ', req.body.isbn);
+    console.log('In PUT /api/book - update()');
+    console.log('req.body.isbn: ', req.body.isbn);
     console.log('Book: ', book);
     res.json(book);
   } catch (err) {
