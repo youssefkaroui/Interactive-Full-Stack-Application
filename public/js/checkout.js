@@ -3,7 +3,7 @@ document.addEventListener('Load Content', () => {
     let clearCarts;
   
     // Get logged in user's data
-    let user = fetch("/api/userinfo")
+    let user = fetch("/api/user")
       .then(response => response.json())
       .then(data => {
         console.log('user.email: ', data.email);

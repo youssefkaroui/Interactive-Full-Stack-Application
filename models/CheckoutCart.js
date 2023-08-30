@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class CheckoutCart extends Model {}
 
 CheckoutCart.init({
-  id: {
+  cartID: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,

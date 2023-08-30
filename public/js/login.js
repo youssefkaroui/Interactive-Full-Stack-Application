@@ -7,7 +7,7 @@ const loginHandler = async (event) => {
   
     if (userEmail && userPassword) {
       // Send a POST request to the API endpoint hanlding the user information to be authenticated 
-      const response = await fetch('/api/users/login', {
+      const response = await fetch('/api/user/login', {
         method: 'POST',
         body: JSON.stringify({ userEmail, userPassword }),
         headers: { 'Content-Type': 'application/json' },
@@ -15,40 +15,11 @@ const loginHandler = async (event) => {
   
       if (response.ok) {
         // Redirects the browser to the profile page after authetication
-        document.location.replace('/profile');
+        document.location.replace('/homepage');
       } else {
         alert(response.statusText);
       }
     }
   };
   
-  const signupHandler = async (event) => {
-    event.preventDefault();
-  
-    const userName = document.querySelector('#name-signup').value.trim();
-    const userEmail = document.querySelector('#email-signup').value.trim();
-    const userPassword = document.querySelector('#password-signup').value.trim();
-  
-    if ( userEmail && userPassword) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ userName, userEmail, userPassword }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-                 
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  };
-  
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginHandler);
-  
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupHandler);
-  
+ 
