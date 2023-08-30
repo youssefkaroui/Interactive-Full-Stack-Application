@@ -11,7 +11,7 @@ body {
 }
 
 
-.container {
+.signup-form .container {
   max-width: 960px;
   margin: 0 auto;
   display: flex;

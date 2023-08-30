@@ -4,42 +4,41 @@
   <title>Sign Up</title>
   <link rel="stylesheet" href="/public/css/style.css">
 <body>
-  <header class="hero is-primary is-flex is-align-items-center">
+  <header class="hero is-link is-flex is-align-items-right">
+    <img src="/public/images/header-1.jpg" alt="Login image">
+
     <div class="hero-body">
       <div class="container has-text-centered">
-        <img src="/images/header-1.jpg" alt="Login image">
 
-        <h1 class="title is-1 is-black">Welcome to the Coding Resources Library!                  
+        <h3 class="title is-3 is-justified ">Welcome to the Coding Resources Library!                  
                     <p>This is a place where you can find all the resources you need to learn to code.</p>
                     <p>We have tutorials, articles, videos, and more.</p>
                     <p>So whether you're a beginner or a seasoned pro, we have something for you.</p>
                     <p>Sign up to get started!</p>
-</h1>
+</h3>
       </div>
     </div>
   </header><br>
 
-  <div class="signup-form container">
-    <div class="columns">
+  <div class="signup-form ">
+    <div class="container">
+      <div class= "columns">
       <div class="column is-half">
       </div>
       <div class="column is-half">
         <div>
           <div><h2 class="has-text-link title is-2 has-text-centered">Sign Up to get started!</h2></div>
-               {{#if message}}
-                <h1>{{message}} </h1>
-                {{/if}}
           <!-- <p>Please enter your information to get started.</p><br> -->
           <br><form action="/signup" method="post">
             <!-- Full Name Input -->
  <div>
-              <input class="input is-rounded" type="text" id="name-signup" name="name" id="name-signup" placeholder="Your Full Name"> <br> <br>
+              <input class="input is-rounded" type="text" id="name-signup" name="userName" id="name-signup" placeholder="Your Full Name"> <br> <br>
             </div> 
             <!-- Email Input -->
             <div class="control has-icons-left">
               <!-- <label for="email-signup">E-mail:</label> -->
               <div class="control has-icons-left">
-                <input class="input is-rounded" type="text" id="email-signup" name="email" placeholder="Your E-mail"> <br> <br>
+                <input class="input is-rounded" type="text" id="email-signup" name="userEmail" placeholder="Your E-mail"> <br> <br>
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
                 </span>
@@ -49,7 +48,7 @@
             <div class=" control has-icons-left">
               <!-- <label for="password-signup">Password:</label> -->
               <div class="control has-icons-left">
-                <input class="input is-rounded" type="password" id="password-signup" name="password"
+                <input class="input is-rounded" type="password" id="password-signup" name="userPassword"
                   placeholder="Create a Password"> <br> <br>
                 <span class="icon is-small is-left">
                   <i class="fas fa-lock">
@@ -58,6 +57,10 @@
             </div><br>
             <!-- Submit button -->
             <button class="button is-rounded is-link" type="submit">Sign Up</button>
+           <br>
+            {{#if message}} <h4>{{message}} </h4>
+            {{/if}}
+
           </form>
         </div>
         <p>Already have an account? <a href="/login">Log in here</a></p>

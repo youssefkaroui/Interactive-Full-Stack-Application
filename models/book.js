@@ -40,4 +40,4 @@ Book.prototype.checkout = function () {
 };
 
 
-module.exports = Book
+module.exports = Book;

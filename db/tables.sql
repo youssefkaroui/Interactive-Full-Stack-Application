@@ -9,7 +9,7 @@ CREATE TABLE books (
     title VARCHAR(255),
     author_id VARCHAR(5),
     publication_year INT,
-    genre VARCHAR(255),
+    Category VARCHAR(255),
     view_count INT DEFAULT 0,
     checkout_count INT DEFAULT 0,
     e-book TEXT,
