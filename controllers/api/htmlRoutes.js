@@ -27,7 +27,7 @@ module.exports = function(app) {
   });
 
   // Browse route: Requires authentication and renders browse page
-  app.get("/book", isAuthenticated, (req, res) => {
+  app.get("/documentation", isAuthenticated, (req, res) => {
     res.render('book', { js: ['book.js'] });
   });
 

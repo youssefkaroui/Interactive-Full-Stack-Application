@@ -71,3 +71,11 @@ a {
 .input::placeholder {
   font-size: 0.8rem;
 }
+.button is-link is-rounded{
+  display: flex;
+  justify-content: flex-end; 
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  
+}

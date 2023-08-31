@@ -1,4 +1,4 @@
-const Book = require("../models/Book")
+const Documentation = require("../models/Documentation")
 const sequelize = require("../config/connection")
 
 const seedData = [
