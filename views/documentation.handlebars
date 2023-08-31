@@ -1,0 +1,44 @@
+  <div >
+    <h2>Welcome, {{users.firstname}} {{users.lastname}}!</h2>
+  </div>
+<!-- documentation-template.hbs -->
+<div class="documentation-list">
+  <h2 class="title is-3">Documentations</h2>
+  <p>
+    Node.js documentation provides comprehensive information about Node.js, a JavaScript runtime built on the V8 JavaScript engine. It covers various aspects of Node.js, including its core modules, APIs, event-driven architecture, and asynchronous programming. The documentation offers clear explanations, examples, and guides for building server-side applications, handling I/O operations, working with streams, and deploying applications. It also provides version-specific release notes, enabling developers to stay up-to-date with the latest features and improvements.
+  </p>
+  <ul>
+    {{#each documentations}}
+      <li>
+        <a href="{{this.link}}" target="_blank">
+          {{this.docTitle}} (Version {{this.version}})
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+  <!-- Search input field -->
+  <input type="text" id="search-input" placeholder="Search Documentations">
+  <br>
+     <input type="hidden" id="node-js" value="https://nodejs.org/docs/latest-v16.x/api/" />
+
+              <div class="buttons has-text-centered">
+                <button class="button is-link is-rounded" id="continueBrowsing">Continue browsing</button>
+                <button class="button is-link is-rounded" id="CopyLink" data-clipboard-target="#node-js">Copy documentation Link</button>
+              </div>
+  <ul>
+    {{#each documentations}}
+      <li>
+        <a href="{{this.link}}">
+          {{this.docTitle}} (Version {{this.version}})
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<script id="documentation" type="text/x-handlebars-template">
+  {{ documentation}}
+</script>
+
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+  <script src="/js/clipboard.js"></script>
+ 

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     openBooksTab.addEventListener('click', function (event) {
       event.preventDefault(); // Prevent the default link behavior
-      window.location.href = '/book';
+      window.location.href = '/Documentation';
     });
   });
   
