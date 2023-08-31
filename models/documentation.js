@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Documentation extends Model {}
 
@@ -8,7 +9,7 @@ Documentation.init({
     primaryKey: true,
     autoIncrement: true,
   },
-  title: {
+  docTitle: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -16,14 +17,7 @@ Documentation.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
-  codelanguage_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: 'CodeLanguage',
-      key: 'id',
-    },
-  },
+  
   createdAt: {
     type: DataTypes.DATE,
     defaultValue: new Date(),
