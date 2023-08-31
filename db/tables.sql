@@ -9,8 +9,8 @@ CREATE TABLE books (
     title VARCHAR(255),
     author_id VARCHAR(5),
     publication_year INT,
+    Category VARCHAR(255),
     view_count INT DEFAULT 0,
->>>>>>> 93acade7d9023df80f1f5825a1358fbb35aa0d39
     checkout_count INT DEFAULT 0,
     e-book TEXT,
     FOREIGN KEY (author_id) REFERENCES authors(id)
