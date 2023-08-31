@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models/User.js');
+const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   console.log("Incoming Data: ", req.body)
@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      // res.status(200).json(userData);
       res.redirect('/login') // OR MAYBE --> Redirect to an AUtorized endpoint(?)
     });
   } catch (err) {
