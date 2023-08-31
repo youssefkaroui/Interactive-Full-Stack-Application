@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <title>Your Coding Resources</title>
 </head>
+
 <body>
   <section class="section">
     <div class="container">
       <h1 class="title is-1 has-text-centered">We've got you!</h1>
-      <h2 class="subtitle has-text-centered">You can review your selection and confirm your order or go back to browsing. </h2>
+      <h2 class="subtitle has-text-centered">You can review your selection and confirm your order or go back to
+        browsing. </h2>
 
       <section class="section">
         <div class="container">
@@ -32,12 +35,15 @@
                   </tbody>
                 </table>
               </div>
-      
+              <input type="hidden" id="node-js" value="https://nodejs.org/docs/latest-v16.x/api/" />
+
               <div class="buttons has-text-centered">
                 <button class="button is-link is-rounded" id="continueBrowsing">Continue browsing</button>
-                <button class="button is-link is-rounded" id="placeOrder">Place Order</button>
+                <button class="button is-link is-rounded" id="placeOrder" data-clipboard-target="#node-js">Place Order</button>
               </div>
-      
+
+              
+
               <!-- <div class="mt-5">
                 <h1 class="title is-4">Purchase history</h1>
                 <div class="table-container">
@@ -54,32 +60,34 @@
                     </thead>
                     <tbody id="purchasesTableBody">
                     Purchases data -->
-                    <!-- </tbody> -->
-                  <!-- </table>
+              <!-- </tbody> -->
+              <!-- </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section> -->
-       <!-- -->
-  <!-- Purchase confirmation modal -->
-  <div class="modal" id="purchaseConfirmationModal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <div class="box">
-        <div class="modal-header">
-          <h5 class="modal-title title is-5">Checkout confirmation</h5>
-          <button class="delete" aria-label="close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Payment received.</p>
-          <p>Enjoy learning!</p>
-        </div>
-        <div class="modal-footer">
-          <button class="button is-secondary" aria-label="close">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- /Purchase confirmation modal -->
+              <!-- -->
+              <!-- Purchase confirmation modal -->
+              <div class="modal" id="purchaseConfirmationModal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                  <div class="box">
+                    <div class="modal-header">
+                      <h5 class="modal-title title is-5">Checkout confirmation</h5>
+                      <button class="delete" aria-label="close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Payment received.</p>
+                      <p>Enjoy learning!</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="button is-secondary" aria-label="close">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Purchase confirmation modal -->
+
+              <script src="dist/clipboard.min.js"></script>
