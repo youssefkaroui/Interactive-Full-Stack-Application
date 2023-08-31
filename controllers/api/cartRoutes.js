@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Book,  CheckoutCart, CheckoutCart_Book } = require('../../models');
+const { User, Documentation,  CheckoutCart, CheckoutCart_Document } = require('../../models');
 
 
 //get all checkout carts
@@ -7,7 +7,7 @@ const { User, Book,  CheckoutCart, CheckoutCart_Book } = require('../../models')
 router.get('/', async (req, res) => {
   try {
     const carts = await CheckoutCart.findAll({
-      include: [Book],
+      include: [Documentation],
     });
 
     console.log('In GET /api/checkout - findAll()');
@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
   try {
     const cart = await CheckoutCart.create({
       id: req.body.id,
-      BookId: req.body.BookId
+      DocumentationId: req.body.DocumentationId
     });
 
     console.log('In POST /api/cart');
@@ -54,16 +54,16 @@ router.post('/', async (req, res) => {
     console.log('CheckoutCart.cartID: ', cart.cartID);
 
     // Also insert into the intermediary table
-    const bookcart = await CheckoutCart_Book.create({
-      cartId: CheckoutCart_Book.cartID,
-      BookId: req.body.BookId,
+    const bookcart = await CheckoutCart_Document.create({
+      cartId: CheckoutCart_Document.cartID,
+      DocumentId: req.body.DocumentId,
     });
 
     console.log('In POST /api/checkout - CheckoutCart_Book');
     console.log('req.body: ', req.body);
-    console.log('CheckoutCart_Book: ', bookcart);
+    console.log('CheckoutCart_Book: ', Documentcart);
 
-    res.json(bookcart);
+    res.json(Documentcart);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'An error occurred while creating the shopping cart.' });
